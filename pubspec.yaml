@@ -24,3 +24,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: IRANYekan
+      fonts:
+        - asset: assets/fonts/IRANYekanMobileRegular.ttf

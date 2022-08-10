@@ -36,8 +36,7 @@ class CupertinoControls extends StatefulWidget {
   }
 }
 
-class _CupertinoControlsState extends State<CupertinoControls>
-    with SingleTickerProviderStateMixin {
+class _CupertinoControlsState extends State<CupertinoControls> with SingleTickerProviderStateMixin {
   late PlayerNotifier notifier;
   late VideoPlayerValue _latestValue;
   double? _latestVolume;
@@ -179,8 +178,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
             useRootNavigator: chewieController.useRootNavigator,
             builder: (context) => CupertinoOptionsDialog(
               options: options,
-              cancelButtonText:
-                  chewieController.optionsTranslation?.cancelButtonText,
+              cancelButtonText: chewieController.optionsTranslation?.cancelButtonText,
             ),
           );
           if (_latestValue.isPlaying) {
@@ -284,8 +282,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
                           if (chewieController.allowPlaybackSpeedChanging)
                             _buildSpeedButton(controller, iconColor, barHeight),
                           if (chewieController.additionalOptions != null &&
-                              chewieController
-                                  .additionalOptions!(context).isNotEmpty)
+                              chewieController.additionalOptions!(context).isNotEmpty)
                             _buildOptionsButton(iconColor, barHeight),
                         ],
                       ),
@@ -347,8 +344,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
 
   Widget _buildHitArea() {
     final bool isFinished = _latestValue.position >= _latestValue.duration;
-    final bool showPlayButton =
-        widget.showPlayButton && !_latestValue.isPlaying && !_dragging;
+    final bool showPlayButton = widget.showPlayButton && !_latestValue.isPlaying && !_dragging;
 
     return GestureDetector(
       onTap: _latestValue.isPlaying
@@ -748,16 +744,14 @@ class _CupertinoControlsState extends State<CupertinoControls>
   void _skipBack() {
     _cancelAndRestartTimer();
     final beginning = Duration.zero.inMilliseconds;
-    final skip =
-        (_latestValue.position - const Duration(seconds: 15)).inMilliseconds;
+    final skip = (_latestValue.position - const Duration(seconds: 15)).inMilliseconds;
     controller.seekTo(Duration(milliseconds: math.max(skip, beginning)));
   }
 
   void _skipForward() {
     _cancelAndRestartTimer();
     final end = _latestValue.duration.inMilliseconds;
-    final skip =
-        (_latestValue.position + const Duration(seconds: 15)).inMilliseconds;
+    final skip = (_latestValue.position + const Duration(seconds: 15)).inMilliseconds;
     controller.seekTo(Duration(milliseconds: math.min(skip, end)));
   }
 
@@ -831,9 +825,11 @@ class _PlaybackSpeedDialog extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (e == _selected)
-                    Icon(Icons.check, size: 20.0, color: selectedColor),
-                  Text(e.toString().toPersianDigit()),
+                  if (e == _selected) Icon(Icons.check, size: 20.0, color: selectedColor),
+                  Text(
+                    e.toString().toPersianDigit(),
+                    style: const TextStyle(fontFamily: "IRANYekan"),
+                  ),
                 ],
               ),
             ),
