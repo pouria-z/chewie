@@ -87,10 +87,7 @@ class ChewieState extends State<Chewie> {
       controller: widget.controller,
       child: ChangeNotifierProvider<PlayerNotifier>.value(
         value: notifier,
-        builder: (context, w) => const Directionality(
-          textDirection: TextDirection.ltr,
-          child: PlayerWithControls(),
-        ),
+        builder: (context, w) => const PlayerWithControls(),
       ),
     );
   }
@@ -133,7 +130,10 @@ class ChewieState extends State<Chewie> {
       controller: widget.controller,
       child: ChangeNotifierProvider<PlayerNotifier>.value(
         value: notifier,
-        builder: (context, w) => const PlayerWithControls(),
+        builder: (context, w) => const Directionality(
+          textDirection: TextDirection.ltr,
+          child: PlayerWithControls(),
+        ),
       ),
     );
 
