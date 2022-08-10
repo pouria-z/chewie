@@ -16,6 +16,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 class CupertinoControls extends StatefulWidget {
   const CupertinoControls({
@@ -444,7 +445,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
     return Padding(
       padding: const EdgeInsets.only(right: 12.0),
       child: Text(
-        formatDuration(position),
+        formatDuration(position).toPersianDigit(),
         style: TextStyle(
           color: iconColor,
           fontSize: 12.0,
@@ -459,7 +460,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
     return Padding(
       padding: const EdgeInsets.only(right: 12.0),
       child: Text(
-        '-${formatDuration(position)}',
+        '-${formatDuration(position)}'.toPersianDigit(),
         style: TextStyle(color: iconColor, fontSize: 12.0),
       ),
     );
@@ -832,7 +833,7 @@ class _PlaybackSpeedDialog extends StatelessWidget {
                 children: [
                   if (e == _selected)
                     Icon(Icons.check, size: 20.0, color: selectedColor),
-                  Text(e.toString()),
+                  Text(e.toString().toPersianDigit()),
                 ],
               ),
             ),
