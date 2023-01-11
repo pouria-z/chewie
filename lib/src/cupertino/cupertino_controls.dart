@@ -365,7 +365,7 @@ class _CupertinoControlsState extends State<CupertinoControls> with SingleTicker
         isPlaying: controller.value.isPlaying,
         show: showPlayButton,
         onPressed: () {
-          widget.onTap.call();
+          widget.onTap!.call();
           _playPause.call();
         },
       ),
