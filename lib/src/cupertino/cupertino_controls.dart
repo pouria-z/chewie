@@ -23,12 +23,14 @@ class CupertinoControls extends StatefulWidget {
     required this.backgroundColor,
     required this.iconColor,
     this.showPlayButton = true,
+    this.onTap,
     Key? key,
   }) : super(key: key);
 
   final Color backgroundColor;
   final Color iconColor;
   final bool showPlayButton;
+  final void Function()? onTap;
 
   @override
   State<StatefulWidget> createState() {
@@ -362,7 +364,10 @@ class _CupertinoControlsState extends State<CupertinoControls> with SingleTicker
         isFinished: isFinished,
         isPlaying: controller.value.isPlaying,
         show: showPlayButton,
-        onPressed: _playPause,
+        onPressed: () {
+          widget.onTap.call();
+          _playPause.call();
+        },
       ),
     );
   }
