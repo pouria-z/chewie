@@ -110,7 +110,7 @@ class _CupertinoControlsState extends State<CupertinoControls> with SingleTicker
                     barHeight,
                     buttonPadding,
                   ),
-                  const Spacer(),
+                  // const Spacer(),
                   if (_subtitleOn)
                     Transform.translate(
                       offset: Offset(
