@@ -119,7 +119,7 @@ class _CupertinoControlsState extends State<CupertinoControls> with SingleTicker
                       ),
                       child: _buildSubtitles(chewieController.subtitle!),
                     ),
-                  _buildBottomBar(backgroundColor, iconColor, barHeight),
+                  Expanded(child: _buildBottomBar(backgroundColor, iconColor, barHeight)),
                 ],
               ),
             ],
