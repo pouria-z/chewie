@@ -111,14 +111,14 @@ class _CupertinoControlsState extends State<CupertinoControls> with SingleTicker
                     buttonPadding,
                   ),
                   // const Spacer(),
-                  if (_subtitleOn)
-                    Transform.translate(
-                      offset: Offset(
-                        0.0,
-                        notifier.hideStuff ? barHeight * 0.8 : 0.0,
-                      ),
-                      child: _buildSubtitles(chewieController.subtitle!),
-                    ),
+                  // if (_subtitleOn)
+                  //   Transform.translate(
+                  //     offset: Offset(
+                  //       0.0,
+                  //       notifier.hideStuff ? barHeight * 0.8 : 0.0,
+                  //     ),
+                  //     child: _buildSubtitles(chewieController.subtitle!),
+                  //   ),
                   Expanded(child: _buildBottomBar(backgroundColor, iconColor, barHeight)),
                 ],
               ),
@@ -246,7 +246,7 @@ class _CupertinoControlsState extends State<CupertinoControls> with SingleTicker
     double barHeight,
   ) {
     return SafeArea(
-      bottom: chewieController.isFullScreen,
+      // bottom: chewieController.isFullScreen,
       child: AnimatedOpacity(
         opacity: notifier.hideStuff ? 0.0 : 1.0,
         duration: const Duration(milliseconds: 300),
