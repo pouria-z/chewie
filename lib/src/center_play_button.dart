@@ -28,8 +28,8 @@ class CenterPlayButton extends StatelessWidget {
           opacity: show ? 1.0 : 0.0,
           duration: const Duration(milliseconds: 300),
           child: Container(
-            width: 120,
-            height: 120,
+            width: 90,
+            height: 90,
             decoration: BoxDecoration(
               color: backgroundColor,
               shape: BoxShape.circle,
